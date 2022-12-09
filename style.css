@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Mukta:wght@200&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #ebebeb;
+    font-family: 'Mukta';   
+  
+}
+
+
+/* Drinks navbar */
+.drink-navbar {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    gap: 1rem;
+  }
+
+.drink-navbar ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+
+  .drink-navbar ul li:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+#cocktail-input {
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.7rem;
+    width: 350px;
+    transition: .3s;
+    
+}
+
+#cocktail-input:focus {
+    box-shadow: 0 2px 5px gray;
+    transform: scale(1.1);
+}
+
+li button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.7rem;
+    transition: .3s;
+    font-family: 'Mukta';
+    font-weight: bold;
+}
+
+li button:hover {
+    color: #04B49C;
+    cursor: pointer;
+}
+
+li button:focus {
+    color: #04B49C;
+}
+
+/* Drinks main */
+.drinks-div-wrapper {
+    width: 75vw;
+    height: 85vh;
+    padding: 1.5rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.drinks-div-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .drink-div {
+        width: 200px;
+        transition: .5s;
+        line-height: 0;
+        position: relative;
+        z-index: 1;
+        border-radius: 20px;
+        transition: .3s;
+        background-color: white;
+        padding: .5rem;
+        margin-bottom: 1.5rem;
+
+}
+
+.drink-div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 7px 7px gray;
+}
+
+.drink-div > * {
+    display: block;
+    padding: .5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.drink-name {
+    font-weight: bolder;
+}
+
+
+.drink-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+
+.fa-circle-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2.2rem;
+    color: #04B49C;
+    opacity: 0;
+    transition: .5s;
+}
+
+.drink-div:hover .fa-circle-info {
+    opacity: 1;
+}
+
+.drink-div:hover .drink-name {
+    color: #04B49C;
+}
+
+.fa-circle-info:hover {
+    cursor: pointer;
+    color: #05F0D1;
+}
+
+
+
+.fa-info-circle {
+    font-size: 2rem;
+    color: #04B49C;
+    font-size: 4rem;
+    color: whitesmoke;
+}
+
+
+
+
+#drinks-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    gap: 1rem;
+}
+
+
+
+.drink-div:hover .drink-thumb {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.add {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: -1;
+}
+
+.info-layer {
+    position: absolute;
+    top: -2.5%;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    text-transform: capitalize;
+    z-index: -1;
+    opacity: 0;
+    transition: .5s;
+    border: 3px solid #04B49C;
+    overflow: scroll;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.info-layer::-webkit-scrollbar {
+    display: none;
+  }
+
+.info-layer > * {
+    line-height: 1rem;
+    color: white; 
+}
+
+.layer-active {
+    z-index: 2;
+    opacity: 1;
+}
+
+
+.fa-circle-xmark {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+
+/* Drinks sidebar */
+#drinksSidebarWrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #545B5A;
+    height: 100%;
+    width: 25vw;
+    right: 0;
+    bottom: 0;
+}
+
+#drinksSidebar {
+    padding: 2rem;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    overflow: hidden;
+}
+
+
+.sidebar-drink {
+    display: flex;
+    align-items: center;
+    line-height: 1rem;
+    height: 85px;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.sidebar-drink img {
+    height: 100%;
+    padding: 0.2rem;
+    border-radius: 20px;
+}
+
+.side-drink-name {
+    font-weight: bolder;
+}
+
+.name-price {
+    margin-left: .5rem;
+    font-size: 1.3rem;
+    
+}
+
+
+.increase-decrease-delete {
+    margin-left: auto;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    gap: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.increase-decrease {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.increase-decrease-delete i:hover {
+    cursor: pointer;
+}
+
+.fa-xmark {
+    color: crimson;
+    opacity: 0;
+    transition: .2s;
+}
+
+.sidebar-drink:hover .fa-xmark {
+    opacity: 1;
+}
+
+.fa-caret-up:hover,
+.fa-caret-down:hover {
+    color: #04B49C;
+}
+
+
+/* Proceed and total price */
+#totalprice-proceed {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-bottom: 1rem;
+    line-height: 1px;
+    gap: 0.2rem;
+    
+}
+
+.total-wrapper {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+}
+
+.total-price {
+    font-size: 1.3rem;
+}
+
+#proceedBtn {
+    padding: .5rem 5rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #04B49C;
+    font-size: 1.2rem;
+    transition: .2s;
+   
+
+}
+
+#totalprice-proceed > * {
+    color: white;
+}
+
+#proceedBtn:hover {
+    cursor: pointer;
+    background-color: #05F0D1;;
+}
+
+
+/* Logo and text animation */
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+        left: 0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        left: 75%;
+ 
+
+    }
+}
+
+@keyframes textOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        
+        opacity: 1;
+    }
+}
+

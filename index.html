@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Navbar for drinks -->
+    <div class="drink-navbar">
+        <input type="text" id="cocktail-input" placeholder="Search the drink...">
+        <ul class="nav-list">
+            <li id="allFilter">
+                <button>All</button>
+            </li>
+            <li id="alcoholicFilter">
+                <button>Alcoholic</button>
+            </li>
+            <li id="nonAlcoholicFilter">
+                <button>Non Alcoholic</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Drinks wrapper -->
+    <div class="drinks-div-wrapper">
+        <div id="drinks-div">
+        
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="drinksSidebarWrapper">
+        <div id="drinksSidebar">
+
+        </div>
+        <!-- Total Price -->
+        <div id="totalprice-proceed">
+            <div class="total-wrapper">
+                <h3>Total Price:</h3>
+                <h3 class="total-price"></h3>
+            </div>
+            <button id="proceedBtn">Proceed</button>       
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
